@@ -14,7 +14,7 @@ import LipiImage from "./assets/projects/lipi.svg";
 import ExchangeImage from "./assets/projects/exchange.svg";
 import PlaceholderImage from "./assets/projects/placeholder.svg";
 
-export const SITE_URL: string = "https://shonebinu.com";
+export const SITE_URL: string = "https://greyesa-bit.github.io";
 
 export const ENABLE_STARDUST_BG: boolean = false;
 
