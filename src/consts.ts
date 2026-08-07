@@ -1,7 +1,7 @@
 
 // Coloca aquí los datos globales del sitio.
 // Se pueden importar desde cualquier parte usando `import`.
-import type { Header, About, Evidencia } from "./types.ts";
+import type { Header, Footer, About, Evidencia } from "./types.ts";
 
 import ProfilePic from "./assets/profile-pic.jpg";
 
@@ -23,6 +23,10 @@ export const meta = {
 };
 
 export const header: Header = { logoTitle: "Gabo | Portafolio" };
+
+export const footer: Footer = {
+  content: "© " + new Date().getFullYear() + " Gabriel Reyes Ariza",
+};
 
 export const about: About = {
   // se interpreta como html
