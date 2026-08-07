@@ -21,9 +21,9 @@ export const ENABLE_STARDUST_BG: boolean = false;
 export const meta = {
   about: {
     // index page
-    title: "Shone Binu",
+    title: "Gabriel Reyes Ariza",
     description:
-      "Hi, I'm Shone Binu, a software engineer. Welcome to my little corner of the internet!",
+      "Mi primer portafolio usando github pages y astro",
   },
   projects: {
     title: "Projects | Shone Binu",
@@ -38,52 +38,31 @@ export const meta = {
   // blog post title and description are taken from the variables in markdown file
 };
 
-export const header: Header = { logoTitle: "SB" };
-
-export const footer: Footer = {
-  // parses html
-  content:
-    "Made with ❤️ by Shone Binu • <a href='https://github.com/shonebinu/portfolio' class='link'>Source Code</a>",
-};
+export const header: Header = { logoTitle: "Mi portafolio" };
 
 export const about: About = {
   // parses html
   headLine:
-    "Hi, I'm <span class='fancy-highlight font-black'>Shone Binu</span>",
-  tagLine: "Software Engineer / Full Stack Developer",
+    "Soy <span class='fancy-highlight font-black'>Gabriel Reyes Ariza</span>",
+  tagLine: "Estudiante de ingenieria de sistemas",
   profilePic: ProfilePic,
   // parses html
   description:
-    "I’m a recent <u>Software Engineer</u> graduate from India 🇮🇳 who likes to keep tackling new problems. Currently, I’m working on the <u>React/Node.js</u> and <u>GTK</u> side of things. Outside of these, I work on improving myself in whatever I see fit.",
+    "Sobre mi, Estudio en la universidad el bosque ingenieria de sistemas, mis hobbies son los videojuegos, escuchar musica y el futbol, entre mis intereses esta poderme graduar y especializarme en IA o en ciberseguridad y sobre todo trabajar en lo que me gusta, lo cual es esto",
   links: [
     // Lucide icons
-    { icon: "Github", href: "https://github.com/shonebinu/" },
-    { icon: "Linkedin", href: "https://www.linkedin.com/in/shonebinu/" },
-    { icon: "Youtube", href: "https://www.youtube.com/@shone_binu" },
+    { icon: "Github", href: "https://github.com/greyesa-bit/" }
   ],
-  resumeHref:
-    "https://drive.google.com/file/d/10dfGCIiX2b7Wf-Lj51ypt3UHgPiPQ3ZV/view?usp=sharing",
-  workExperience: [
+  Presentación: [
     {
-      title: "Full Stack Developer Intern",
-      timeline: "May 2024 - Oct 2024",
-      company: "Rabbitsquare • India",
+      title: "Video en el que cuento un poco acerca de mi",
       description:
-        "Developed a LAMP stack web solution for a Civil Service academy, including a customizable public website, management portal, user portal, and exam result publishing system.",
-    },
-  ],
-  education: [
-    {
-      title: "Bachelor of Computer Application",
-      timeline: "Jun 2022 - Apr 2025",
-      institution: "Nirmala College Muvattupuzha • India",
-      description:
-        "Studied core computer science fundamentals including programming languages, data structures, algorithms, operating systems, and networking, with practical experience in Java, C/C++, JavaScript, PHP, and Linux.",
+        "Enlace del video en youtube: https://youtu.be/Hm-rrE_UWTM",
     },
   ],
   // parses html
-  getInTouch:
-    "Drop me an email at <a href='mailto:mail@shonebinu.com' class='primary-underline'>mail@shonebinu.com</a> or connect with me on one of my socials.",
+  Ponte en contaco:
+    "Mandame un email a <a class='primary-underline'>greyesa@unbosque.edu.co</a> or connect with me on one of my socials.",
 };
 
 export const projects: Project[] = [
