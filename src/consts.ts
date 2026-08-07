@@ -1,5 +1,4 @@
 
-cat > /home/claude/work3/greyesa-bit.github.io-main/src/consts.ts << 'EOF'
 // Coloca aquí los datos globales del sitio.
 // Se pueden importar desde cualquier parte usando `import`.
 import type { Header, About, Evidencia } from "./types.ts";
@@ -60,5 +59,3 @@ export const evidencias: Evidencia[] = [
     description: "Entregas y avances del proyecto final del curso.",
   },
 ];
-EOF
-echo done
