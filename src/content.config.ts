@@ -1,19 +1,6 @@
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
-
-const blog = defineCollection({
-	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
-	// Type-check frontmatter using a schema
-	schema: ({ image }) =>
-		z.object({
-			title: z.string(),
-			description: z.string(),
-			// Transform string to Date object
-			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-			heroImage: image().optional(),
-		}),
-});
-
-export const collections = { blog };
+cat > /home/claude/work3/greyesa-bit.github.io-main/src/content.config.ts << 'EOF'
+// Este sitio ya no usa colecciones de contenido (blog).
+// Se deja vacío por si en el futuro se agrega algo.
+export const collections = {};
+EOF
+echo done

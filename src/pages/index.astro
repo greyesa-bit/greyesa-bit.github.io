@@ -1,5 +1,6 @@
+rm /home/claude/work3/greyesa-bit.github.io-main/src/pages/index.astro
+cat > /home/claude/work3/greyesa-bit.github.io-main/src/pages/index.astro << 'EOF'
 ---
-import { SquareArrowOutUpRight } from "@lucide/astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { meta, about } from "../consts.ts";
@@ -12,7 +13,7 @@ import LucideIcon from "../components/LucideIcon.astro";
     <p>{about.tagLine}</p>
     <Image
       src={about.profilePic}
-      alt="Profile Picture"
+      alt="Foto de perfil"
       class="mx-auto my-4 w-32 rounded-full"
     />
     <p set:html={about.description} class="text-base-content/80" />
@@ -30,61 +31,26 @@ import LucideIcon from "../components/LucideIcon.astro";
         ))
       }
     </div>
-    <div class="flex flex-col gap-2 sm:flex-row">
-      <a
-        class="btn btn-primary sm:flex-1"
-        href={about.resumeHref}
-        target="_blank"
-        >Open Resume<SquareArrowOutUpRight size="1rem" />
-      </a>
-      <a class="btn btn-soft btn-accent sm:flex-1" href="/projects"
-        >Evidencias</a
-      >
-    </div>
+    <a class="btn btn-soft btn-accent w-full" href="/evidencias">Evidencias</a>
   </section>
 
   <section class="mt-10">
     <h2>
-      <span class="fancy-highlight">Work Experience</span>
+      <span class="fancy-highlight">Presentación</span>
     </h2>
-    <div class="mt-2 flex flex-col gap-6">
-      {
-        about.workExperience.map((exp) => (
-          <div>
-            <h3>{exp.title}</h3>
-            <div class="primary-badge my-1">{exp.timeline}</div>
-            <p class="mb-2">{exp.company}</p>
-            <p class="text-base-content/80">{exp.description}</p>
-          </div>
-        ))
-      }
-    </div>
-  </section>
-
-  <section class="mt-10">
-    <h2>
-      <span class="fancy-highlight">Education</span>
-    </h2>
-    <div class="mt-2 flex flex-col gap-6">
-      {
-        about.education.map((edu) => (
-          <div>
-            <h3>{edu.title}</h3>
-            <div class="primary-badge my-1">{edu.timeline}</div>
-            <p class="mb-2">{edu.institution}</p>
-            <p class="text-base-content/80">{edu.description}</p>
-          </div>
-        ))
-      }
-    </div>
-  </section>
-
-  <section class="mt-10">
-    <h2>
-      <span class="fancy-highlight">Get In Touch</span>
-    </h2>
-    <div class="mt-2">
-      <p set:html={about.getInTouch} class="text-base-content/80" />
+    <p class="text-base-content/80 mt-1">
+      Un video corto para que me conozcas: quién soy, qué me gusta y en que me puede servir bases de datos.
+    </p>
+    <div class="mt-4 aspect-video w-full overflow-hidden rounded-lg">
+      <iframe
+        class="h-full w-full"
+        src={about.youtubeEmbedUrl}
+        title="Video de presentación"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
   </section>
 </Layout>
+EOF
+echo done

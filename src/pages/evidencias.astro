@@ -1,0 +1,30 @@
+rm /home/claude/work3/greyesa-bit.github.io-main/src/pages/projects.astro
+cat > /home/claude/work3/greyesa-bit.github.io-main/src/pages/evidencias.astro << 'EOF'
+---
+import Layout from "../layouts/Layout.astro";
+import { meta, evidencias } from "../consts.ts";
+---
+
+<Layout title={meta.evidencias.title} description={meta.evidencias.description}>
+  <h2>
+    <span class="fancy-highlight">Evidencias</span>
+  </h2>
+  <p class="text-base-content/80 mt-1">
+    Aquí se irán publicando las evidencias del curso a medida que avance el
+    semestre.
+  </p>
+
+  <section class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {
+      evidencias.map((item) => (
+        <div class="border-base-content/10 rounded-lg border p-4">
+          <h3>{item.title}</h3>
+          <p class="text-base-content/80 mt-1">{item.description}</p>
+          <span class="primary-badge mt-2 inline-block">Próximamente</span>
+        </div>
+      ))
+    }
+  </section>
+</Layout>
+EOF
+echo done

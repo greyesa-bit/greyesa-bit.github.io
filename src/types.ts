@@ -14,37 +14,16 @@ interface IconLink {
   href: string;
 }
 
-interface WorkExperience {
-  title: string;
-  timeline: string;
-  company: string;
-  description: string;
-}
-
-interface Education {
-  title: string;
-  timeline: string;
-  institution: string;
-  description: string;
-}
-
 export interface About {
   headLine: string;
   tagLine: string;
   profilePic: ImageMetadata;
   description: string;
   links: IconLink[];
-  resumeHref: string;
-  workExperience: WorkExperience[];
-  education: Education[];
-  getInTouch: string;
+  youtubeEmbedUrl: string;
 }
 
-export interface Project {
-  logoImage: ImageMetadata;
+export interface Evidencia {
   title: string;
-  techs: string[];
   description: string;
-  sourceHref?: string;
-  liveHref?: string;
 }
