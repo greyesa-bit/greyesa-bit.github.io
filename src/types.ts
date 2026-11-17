@@ -22,8 +22,8 @@ export interface About {
   links: IconLink[];
   youtubeEmbedUrl: string;
 }
-
 export interface Evidencia {
   title: string;
   description: string;
+  href?: string;
 }

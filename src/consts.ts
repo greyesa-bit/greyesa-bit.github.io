@@ -1,4 +1,3 @@
-
 // Coloca aquí los datos globales del sitio.
 // Se pueden importar desde cualquier parte usando `import`.
 import type { Header, Footer, About, Evidencia } from "./types.ts";
@@ -19,6 +18,11 @@ export const meta = {
     title: "Evidencias | Gabriel Reyes Ariza",
     description:
       "Evidencias del curso de Bases de Datos 1: Modelado, Normalización, SQL y Proyecto.",
+  },
+  modelado: {
+    title: "Modelado | Gabriel Reyes Ariza",
+    description:
+      "Modelo entidad-relación y reducción a tablas desarrollados en el curso de Bases de Datos 1.",
   },
 };
 
@@ -49,6 +53,7 @@ export const evidencias: Evidencia[] = [
     title: "Modelado",
     description:
       "Diagramas entidad-relación y modelo conceptual/lógico de la base de datos.",
+    href: "/evidencias/modelado",
   },
   {
     title: "Normalización",
