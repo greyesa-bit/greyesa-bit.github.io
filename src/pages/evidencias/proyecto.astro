@@ -1,0 +1,225 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { meta } from "../../consts.ts";
+
+const base = "/evidencias/proyecto";
+const repo = "https://github.com/mqteoh/BackMotos/blob/main/scripts";
+
+const secciones = [
+  {
+    titulo: "Diseño de la base",
+    items: [
+      {
+        titulo: "Supuestos del negocio",
+        descripcion:
+          "Antes de diseñar escribimos 48 supuestos del negocio. Cada uno dice qué decidimos y qué efecto tiene en el modelo.",
+        img: `${base}/supuestos.png`,
+        alt: "Tabla con algunos de los 48 supuestos del negocio y su efecto en el modelo",
+      },
+      {
+        titulo: "MER y modelo transformado",
+        descripcion:
+          "Modelo entidad-relación en notación de Chen y su transformación al modelo relacional, hechos en draw.io.",
+        img: `${base}/mer-y-modelo-transformado.png`,
+        alt: "Modelo entidad-relación de MotoMaster en notación de Chen y su modelo transformado",
+      },
+      {
+        titulo: "Tipos de relación",
+        descripcion:
+          "Los tipos de relación del modelo con un ejemplo de cada uno: 1:1, 1:N, M:N, ternaria, recursiva y especialización.",
+        img: `${base}/relaciones.png`,
+        alt: "Tipos de relación del modelo: 1:1, 1:N, M:N, ternaria, recursiva y especialización",
+      },
+      {
+        titulo: "Modelo relacional",
+        descripcion: "21 tablas del negocio agrupadas por área y 2 tablas de la aplicación web.",
+        img: `${base}/modelo-relacional.png`,
+        alt: "Las 21 tablas del negocio agrupadas por área y las 2 tablas de la aplicación web",
+      },
+      {
+        titulo: "Normalización",
+        descripcion:
+          "El curso pedía llegar a 3FN. Revisamos el modelo forma por forma hasta 4FN, con ejemplos de los datos de prueba.",
+        img: `${base}/normalizacion.png`,
+        alt: "Tabla de 1FN a 4FN con lo que pide cada forma y cómo la cumple el modelo",
+      },
+    ],
+  },
+  {
+    titulo: "Base de datos",
+    items: [
+      {
+        titulo: "Por qué PostgreSQL",
+        descripcion: "Matriz de selección del gestor y lo que tiene la base.",
+        img: `${base}/postgresql.png`,
+        alt: "Matriz de selección del gestor y resumen de la base: 23 tablas, 10 triggers, 5 vistas y 2 funciones",
+      },
+      {
+        titulo: "Tablas en el servidor",
+        descripcion: "Las 23 tablas creadas en el servidor, vistas desde psql.",
+        img: `${base}/psql-tablas.png`,
+        alt: "Consola de psql listando las 23 tablas del esquema concesionario_motos y el conteo de registros",
+      },
+      {
+        titulo: "Trigger de reservas",
+        descripcion:
+          "Un trigger rechaza la reserva de una moto que no está disponible, aunque se intente desde la consola.",
+        img: `${base}/psql-trigger-reserva.png`,
+        alt: "Consola de psql donde un trigger rechaza la reserva de una moto que no está disponible",
+      },
+      {
+        titulo: "Álgebra relacional",
+        descripcion:
+          "50 consultas de álgebra relacional sobre la base, comprobadas cada una con su consulta en SQL.",
+        img: `${base}/algebra.png`,
+        alt: "Resumen de los 50 ejercicios de álgebra relacional por operador y un ejemplo con división",
+      },
+    ],
+  },
+  {
+    titulo: "Aplicación web",
+    items: [
+      {
+        titulo: "Arquitectura",
+        descripcion: "Tres capas: front en Angular, back en Spring Boot y base en PostgreSQL.",
+        img: `${base}/arquitectura.png`,
+        alt: "Arquitectura de tres capas: front en Angular, back en Spring Boot y base en PostgreSQL",
+      },
+      {
+        titulo: "Roles",
+        descripcion: "Lo que puede hacer cada rol en la aplicación.",
+        img: `${base}/roles.png`,
+        alt: "Qué puede hacer cada rol: visitante, cliente, vendedor, técnico y dueño",
+      },
+      {
+        titulo: "Diagrama de clases del back",
+        descripcion: "Las entidades de las 23 tablas.",
+        img: `${base}/clases-back-entidades.png`,
+        alt: "Diagrama de clases del back con las entidades de las 23 tablas",
+      },
+      {
+        titulo: "Diagrama de clases del front",
+        descripcion: "El núcleo del front: sesión, interceptores y servicios.",
+        img: `${base}/clases-front-nucleo.png`,
+        alt: "Diagrama de clases del núcleo del front: sesión, interceptores y servicios",
+      },
+    ],
+  },
+  {
+    titulo: "Servidor",
+    items: [
+      {
+        titulo: "Máquina virtual",
+        descripcion: "La máquina en VirtualBox: 2 procesadores, 2 GB de RAM y 25 GB de disco.",
+        img: `${base}/virtualbox.png`,
+        alt: "Configuración de la máquina virtual en VirtualBox: Oracle Linux, 2 GB de RAM, 2 procesadores y disco de 25 GB",
+      },
+      {
+        titulo: "Sistema operativo",
+        descripcion: "Oracle Linux 9.8 con kernel UEK.",
+        img: `${base}/oracle-linux.png`,
+        alt: "Consola que muestra Oracle Linux Server release 9.8 con kernel UEK",
+      },
+    ],
+  },
+];
+
+const scripts = [
+  { nombre: "01_creacion.sql", descripcion: "tablas, llaves, restricciones y triggers." },
+  { nombre: "02_insercion.sql", descripcion: "datos de prueba." },
+  { nombre: "03_varios.sql", descripcion: "vistas y funciones." },
+  { nombre: "04_usuarios.sql", descripcion: "usuarios y permisos." },
+  {
+    nombre: "05_consultas_algebra.sql",
+    descripcion: "las 50 consultas de álgebra relacional en SQL.",
+  },
+];
+---
+
+<Layout title={meta.proyecto.title} description={meta.proyecto.description}>
+  <a href="/evidencias" class="text-sm">← Volver a Evidencias</a>
+
+  <h2 class="mt-2">
+    <span class="fancy-highlight">Proyecto</span>
+  </h2>
+  <p class="text-base-content/80 mt-1">
+    MotoMaster: una base de datos para un concesionario de motos con varias
+    sedes. La base corre en una máquina virtual con Oracle Linux 9 y tiene una
+    aplicación web con acceso por roles. Haz clic en cualquier imagen para verla
+    en tamaño completo.
+  </p>
+
+  <div class="mt-3 flex flex-wrap gap-2">
+    <a
+      class="btn btn-soft btn-accent"
+      href={`${base}/MotoMaster-presentacion.pdf`}
+      target="_blank"
+      rel="noopener"
+    >
+      Presentación (PDF)
+    </a>
+    <a
+      class="btn btn-soft btn-accent"
+      href={`${base}/diccionario/AllEntitiesDetails_1_index.html`}
+      target="_blank"
+      rel="noopener"
+    >
+      Diccionario de datos
+    </a>
+    <a
+      class="btn btn-soft btn-accent"
+      href="https://github.com/mqteoh/BackMotos"
+      target="_blank"
+      rel="noopener"
+    >
+      Repositorio del back
+    </a>
+    <a
+      class="btn btn-soft btn-accent"
+      href="https://github.com/mqteoh/FrontMotos"
+      target="_blank"
+      rel="noopener"
+    >
+      Repositorio del front
+    </a>
+  </div>
+
+  {
+    secciones.map((s) => (
+      <section class="mt-12">
+        <h3>{s.titulo}</h3>
+        {s.titulo === "Base de datos" && (
+          <div>
+            <p class="text-base-content/80 mt-1 text-sm">
+              La base corre en PostgreSQL 13 y se crea con cinco scripts:
+            </p>
+            <ul class="text-base-content/80 mt-2 list-disc space-y-1 pl-5 text-sm">
+              {scripts.map((sc) => (
+                <li>
+                  <a class="link" href={`${repo}/${sc.nombre}`} target="_blank" rel="noopener">
+                    {sc.nombre}
+                  </a>
+                  : {sc.descripcion}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {s.items.map((p) => (
+          <div class="mt-8">
+            <h4>{p.titulo}</h4>
+            <p class="text-base-content/80 mt-1 text-sm">{p.descripcion}</p>
+            <a href={p.img} target="_blank" rel="noopener">
+              <img
+                src={p.img}
+                alt={p.alt}
+                class="mt-2 w-full rounded-lg bg-white"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        ))}
+      </section>
+    ))
+  }
+</Layout>

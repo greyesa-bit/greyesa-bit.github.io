@@ -1,0 +1,68 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { meta } from "../../consts.ts";
+
+const base = "/evidencias/normalizacion";
+---
+
+<Layout
+  title={meta.normalizacion.title}
+  description={meta.normalizacion.description}
+>
+  <a href="/evidencias" class="text-sm">← Volver a Evidencias</a>
+
+  <h2 class="mt-2">
+    <span class="fancy-highlight">Normalización</span>
+  </h2>
+  <p class="text-base-content/80 mt-1">
+    Talleres de normalización desarrollados en el curso.
+  </p>
+
+  <section class="mt-8">
+    <h3>Taller de normalización</h3>
+    <p class="text-base-content/80 mt-1 text-sm">
+      Dos esquemas, una clínica y una tienda: dependencias funcionales,
+      anomalías, normalización paso a paso hasta 3FN y análisis de BCNF. También
+      un caso de 1FN con atributos multivaluados.
+    </p>
+    <div class="mt-3 flex flex-wrap gap-2">
+      <a
+        class="btn btn-soft btn-accent"
+        href={`${base}/taller-normalizacion-preguntas.pdf`}
+        target="_blank"
+        rel="noopener"
+      >
+        Respuestas del taller (PDF)
+      </a>
+      <a class="btn btn-soft btn-accent" href={`${base}/taller-normalizacion.xlsx`}>
+        Normalización paso a paso (Excel)
+      </a>
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <h3>Ejercicios de normalización</h3>
+    <p class="text-base-content/80 mt-1 text-sm">
+      Cinco casos: empleados asignados a proyectos, cursos de estudiantes, cenas
+      de socios, visitas médicas y alquiler de películas. En cada uno se
+      identifican las dependencias y se normaliza paso a paso; el de las cenas
+      llega hasta 4FN.
+    </p>
+    <div class="mt-3 flex flex-wrap gap-2">
+      <a
+        class="btn btn-soft btn-accent"
+        href={`${base}/enunciado-ejercicios-normalizacion.pdf`}
+        target="_blank"
+        rel="noopener"
+      >
+        Ver enunciado de los ejercicios (PDF)
+      </a>
+      <a
+        class="btn btn-soft btn-accent"
+        href={`${base}/taller-normalizacion-ejercicios.xlsx`}
+      >
+        Respuestas de los ejercicios (Excel)
+      </a>
+    </div>
+  </section>
+</Layout>

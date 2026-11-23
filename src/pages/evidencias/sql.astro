@@ -1,0 +1,116 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { meta } from "../../consts.ts";
+
+const base = "/evidencias/sql";
+
+const algebraUniversidades = [
+  {
+    titulo: "Enunciado y consultas 1 a 3",
+    img: `${base}/algebra-universidades-1.jpg`,
+    alt: "Hoja de cuaderno con las relaciones del ejercicio y las consultas 1 a 3 en álgebra relacional",
+  },
+  {
+    titulo: "Consultas 4 a 6",
+    img: `${base}/algebra-universidades-2.jpg`,
+    alt: "Hoja de cuaderno con las consultas 4 a 6 en álgebra relacional, con join, renombre y diferencia",
+  },
+  {
+    titulo: "Consulta 7",
+    img: `${base}/algebra-universidades-3.jpg`,
+    alt: "Hoja de cuaderno con la consulta 7: empleados que ganan más que el sueldo máximo de la Universidad de Los Andes",
+  },
+];
+
+const ejercicios = [
+  { texto: "Empleados que ganan más de 10.000, de mayor a menor salario.", tema: "WHERE y ORDER BY" },
+  { texto: "Empleados contratados desde 2017.", tema: "función de fecha EXTRACT" },
+  { texto: "Cada empleado con el nombre de su departamento.", tema: "JOIN" },
+  { texto: "Empleados que no tienen departamento.", tema: "IS NULL" },
+  { texto: "Cantidad de empleados y salario promedio por departamento.", tema: "GROUP BY con COUNT y AVG" },
+  { texto: "Departamentos con más de 5 empleados.", tema: "HAVING" },
+  { texto: "Empleados que ganan más que el promedio de toda la empresa.", tema: "subconsulta" },
+  { texto: "Departamentos que no tienen ningún empleado.", tema: "NOT EXISTS" },
+  { texto: "Cada empleado con el nombre de su jefe.", tema: "JOIN de la tabla consigo misma" },
+  { texto: "Empleados que han cambiado de cargo y cuántas veces.", tema: "JOIN y COUNT sobre el historial" },
+  {
+    texto: "Insertar un departamento y deshacer el cambio con ROLLBACK: después del ROLLBACK la consulta devuelve 0 filas.",
+    tema: "transacciones",
+  },
+].map((e, i) => ({
+  ...e,
+  numero: i + 1,
+  img: `${base}/sql-ejercicio-${String(i + 1).padStart(2, "0")}.png`,
+}));
+---
+
+<Layout title={meta.sql.title} description={meta.sql.description}>
+  <a href="/evidencias" class="text-sm">← Volver a Evidencias</a>
+
+  <h2 class="mt-2">
+    <span class="fancy-highlight">SQL</span>
+  </h2>
+  <p class="text-base-content/80 mt-1">
+    Ejercicios de consultas desarrollados en el curso. Haz clic en cualquier
+    imagen para verla en tamaño completo.
+  </p>
+
+  <section class="mt-8">
+    <h3>Ejercicios de consultas SQL</h3>
+    <p class="text-base-content/80 mt-1 text-sm">
+      Once ejercicios sobre las tablas de empleados, departamentos e historial
+      laboral, ejecutados en Oracle FreeSQL. Cada imagen muestra la sentencia y
+      su resultado; el último prueba una transacción con ROLLBACK.
+    </p>
+    <a
+      class="btn btn-soft btn-accent mt-3"
+      href={`${base}/ejercicios-sql-basicos.sql`}
+      target="_blank"
+      rel="noopener"
+    >
+      Sentencias de los ejercicios (SQL)
+    </a>
+    {
+      ejercicios.map((e) => (
+        <div class="mt-6">
+          <h4>
+            {e.numero}. {e.texto}
+          </h4>
+          <p class="text-base-content/80 mt-1 text-sm">Tema: {e.tema}</p>
+          <a href={e.img} target="_blank" rel="noopener">
+            <img
+              src={e.img}
+              alt={`Consulta SQL ${e.numero} en FreeSQL y su resultado`}
+              class="mt-2 w-full rounded-lg"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      ))
+    }
+  </section>
+
+  <section class="mt-12">
+    <h3>Ejercicio de álgebra relacional: universidades y empleados</h3>
+    <p class="text-base-content/80 mt-1 text-sm">
+      Resuelto a mano sobre las relaciones empleado, trabaja, universidad y
+      jefe. Usa selección, proyección, renombre, join, diferencia y una función
+      de agregación para el sueldo máximo.
+    </p>
+    {
+      algebraUniversidades.map((p) => (
+        <div class="mt-6">
+          <h4>{p.titulo}</h4>
+          <a href={p.img} target="_blank" rel="noopener">
+            <img
+              src={p.img}
+              alt={p.alt}
+              class="mt-2 w-full rounded-lg bg-white"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      ))
+    }
+  </section>
+</Layout>

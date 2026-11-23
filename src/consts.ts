@@ -24,6 +24,21 @@ export const meta = {
     description:
       "Modelo entidad-relación y reducción a tablas desarrollados en el curso de Bases de Datos 1.",
   },
+  normalizacion: {
+    title: "Normalización | Gabriel Reyes Ariza",
+    description:
+      "Talleres de normalización de Bases de Datos 1: dependencias funcionales, formas normales y BCNF.",
+  },
+  sql: {
+    title: "SQL | Gabriel Reyes Ariza",
+    description:
+      "Ejercicios de consultas y álgebra relacional de Bases de Datos 1.",
+  },
+  proyecto: {
+    title: "Proyecto | Gabriel Reyes Ariza",
+    description:
+      "MotoMaster: diseño, base de datos, aplicación web y servidor del proyecto final de Bases de Datos 1.",
+  },
 };
 
 export const header: Header = { logoTitle: "Gabo | Portafolio" };
@@ -58,13 +73,16 @@ export const evidencias: Evidencia[] = [
   {
     title: "Normalización",
     description: "Proceso de normalización aplicado al modelo de datos (1FN, 2FN, 3FN).",
+    href: "/evidencias/normalizacion",
   },
   {
     title: "SQL",
     description: "Scripts de creación, consultas y manipulación de datos en SQL.",
+    href: "/evidencias/sql",
   },
   {
     title: "Proyecto",
     description: "Entregas y avances del proyecto final del curso.",
+    href: "/evidencias/proyecto",
   },
 ];

@@ -18,6 +18,7 @@ const practicas = [
     img: `${base}/practica-zoologico.png`,
   },
 ];
+
 ---
 
 <Layout title={meta.modelado.title} description={meta.modelado.description}>
@@ -156,5 +157,31 @@ const practicas = [
         </div>
       ))
     }
+  </section>
+
+  <section class="mt-12">
+    <h3>Taller: del MER al modelo relacional</h3>
+    <p class="text-base-content/80 mt-1 text-sm">
+      Ejercicios sobre el caso de una aerolínea: atributos multivaluados,
+      compuestos y derivados, relaciones M:N y ternarias, y especialización.
+    </p>
+    <div class="mt-3 flex flex-wrap gap-2">
+      <a
+        class="btn btn-soft btn-accent"
+        href={`${base}/taller-mer-a-modelo-relacional.pdf`}
+        target="_blank"
+        rel="noopener"
+      >
+        Respuestas del taller (PDF)
+      </a>
+      <a
+        class="btn btn-soft btn-accent"
+        href="https://drive.google.com/file/d/1pTyCIVSGiLFoFniIwplXFJ8kg-o5kRzA/view?usp=sharing"
+        target="_blank"
+        rel="noopener"
+      >
+        Diagrama del taller en Google Drive
+      </a>
+    </div>
   </section>
 </Layout>
